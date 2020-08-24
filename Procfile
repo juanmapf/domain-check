@@ -1,1 +1,1 @@
-web: php spark serve
+web: bin/start-nginx-solo
