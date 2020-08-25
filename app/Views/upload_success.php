@@ -57,13 +57,13 @@
             dataType: 'json',
             success: function(response) {
                 total += perRequestLength;
-                $('#title').text(`Processed: ${total}/${hosts.length} domains. ${totalAvailable} available.`);
                 var domains = [];
                 response.forEach((value, index) => {
                     $('#hosts tr:last').after(makeTr(value.host.domain, value.availability));
                     domains.push(value.host.domain);
-                    totalAvailable += 1;
                 });
+                totalAvailable += response.length;
+                $('#title').text(`Processed: ${total}/${hosts.length} domains. ${totalAvailable} available.`);
                 authStack.push(...domains)
             },
             error: function(err) {
