@@ -119,7 +119,7 @@
     * Makes a table row identified by the host without dots.
     */
     function makeTr(host, available) {
-        return `<tr id=${host.replace(/\./g, '')}><td class="text-lg mb-5 h-16 border px-4 py-2">${host}</td><td class="mb-5 h-16 border px-4 py-2 authority"><span class="text-gray-900 bg-gray-100 rounded px-4 py-1 rank-cont">OR <span class="font-medium rank"></span></span></td></tr>`;
+        return `<tr id=${host.replace(/\./g, '')}><td class="text-lg mb-5 h-16 border px-4 py-2">${host}</td><td class="text-center mb-5 h-16 border px-4 py-2 authority"><span class="text-gray-900 bg-gray-100 rounded px-4 py-1 rank-cont">OR <span class="font-medium rank"></span></span></td></tr>`;
     }
 
     /**

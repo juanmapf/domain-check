@@ -36,10 +36,11 @@ class Upload extends BaseController {
             $handle = $file->openFile('r');
             $rows = array();
             $count = 0;
+            $disallowed_extensions = array('html', 'pdf', 'jsx', 'js', 'csv', 'css');
             while(!$handle->eof()) {
                 $row = $handle->fgetcsv();
 
-                if (preg_match($domain_pattern, $row[0]))
+                if (preg_match($domain_pattern, $row[0]) && !in_array(end(preg_split('/\./', $row[0])), $disallowed_extensions))
                 {
                     array_push($rows, [
                         'domain' => $row[0],
