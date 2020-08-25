@@ -25,11 +25,7 @@ class Upload extends BaseController {
 
             if (!$file->isValid())
             {
-                $data = [
-                    'upload_data' => array(),
-                    'upload_count' => 0
-                ];
-                echo view('upload_success', $data);
+                echo view('upload_error');
                 return;
             }
 
@@ -53,7 +49,7 @@ class Upload extends BaseController {
             ];
             echo view('upload_success', $data);
         } else {
-            echo view('upload_success');
+            echo view('upload_error');
         }
     }
 
