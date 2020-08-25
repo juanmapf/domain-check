@@ -57,6 +57,9 @@
             dataType: 'json',
             success: function(response) {
                 total += perRequestLength;
+                if (total > hosts.length) {
+                    total = hosts.length;
+                }
                 var domains = [];
                 response.forEach((value, index) => {
                     $('#hosts tr:last').after(makeTr(value.host.domain, value.availability));
