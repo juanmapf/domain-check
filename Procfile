@@ -1,1 +1,1 @@
-web: bin/start-nginx-solo
+web: vendor/bin/heroku-php-apache2 public/
